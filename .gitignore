@@ -36,20 +36,20 @@ public/media/*
 # Cache Files
 # ---------------
 
-/storage/site/cache/*
-!/storage/site/cache/index.html
+/storage/cache/*
+!/storage/cache/index.html
 
 # Accounts
 # ---------------
 
-/storage/site/accounts/*
-!/storage/site/accounts/index.html
+/storage/accounts/*
+!/storage/accounts/index.html
 
 # Sessions
 # ---------------
 
-/storage/site/sessions/*
-!/storage/site/sessions/index.html
+/storage/sessions/*
+!/storage/sessions/index.html
 
 # License
 # ---------------
