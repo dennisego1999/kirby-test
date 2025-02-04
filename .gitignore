@@ -10,10 +10,7 @@ Icon
 public/media/*
 !/media/index.html
 
-# Lock files
-# ---------------
 
-.lock
 
 # Editors
 # (sensitive workspace files)
