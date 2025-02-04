@@ -10,10 +10,11 @@ Icon
 public/media/*
 !/media/index.html
 
-# Composer
+# Package Managers
 # ---------------
 
-/vendor
+vendor
+node_modules
 
 # Editors
 # (sensitive workspace files)
@@ -22,11 +23,18 @@ public/media/*
 /.vscode
 /.idea
 
+# Public
+# ---------------
+
+/public/*
+!/public/index.php
+!/public/.htaccess
+!/public/assets
+
 # Content
 # ---------------
 
 /content/*
-
 
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
