@@ -10,7 +10,10 @@ Icon
 public/media/*
 !/media/index.html
 
+# Composer
+# ---------------
 
+/vendor
 
 # Editors
 # (sensitive workspace files)
@@ -23,7 +26,6 @@ public/media/*
 # ---------------
 
 /content/*
-
 
 
 # -------------SECURITY-------------
