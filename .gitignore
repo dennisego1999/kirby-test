@@ -36,6 +36,11 @@ node_modules
 
 /content/*
 
+# Content
+# ---------------
+
+/site/plugins/*
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
