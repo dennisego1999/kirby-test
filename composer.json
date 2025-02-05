@@ -22,7 +22,8 @@
   },
   "require": {
     "php": "^8.4",
-    "getkirby/cms": "^4.0"
+    "getkirby/cms": "^4.0",
+    "beebmx/kirby-env": "^4.2"
   },
   "config": {
     "allow-plugins": {
