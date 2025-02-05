@@ -1,11 +1,12 @@
 <?php
 
+
 return [
     // Application Configuration
     // ------------------------
     
     // Base URL of the site
-    'url' => env('URL', 'https://kirby.ddev.site'),
+    'url' => env('URL'),
     
     // Current environment (production, development, staging)
     'environment' => env('ENVIRONMENT', 'production'),
