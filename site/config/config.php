@@ -26,8 +26,7 @@ return [
     // Allow panel installation
     'panel.install' => env('PANEL_INSTALL', true),
     
-    // Security: Restrict panel iframe embedding to same origin only (for pagepreview plugin)
-    'panel.frameAncestors' => ['self'],
+  
     
     // Language Configuration
     // ---------------------
