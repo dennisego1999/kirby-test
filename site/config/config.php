@@ -5,7 +5,7 @@ return [
     // ------------------------
 
     // Base URL of the site
-    'url' => env('URL'),
+    'url' => env('APP_URL'),
 
     // Current environment (production, development, staging)
     'environment' => env('ENVIRONMENT', 'production'),

@@ -23,7 +23,8 @@
   "require": {
     "php": "^8.4",
     "getkirby/cms": "^4.0",
-    "beebmx/kirby-env": "^4.2"
+    "beebmx/kirby-env": "^4.2",
+    "lukaskleinschmidt/kirby-laravel-vite": "^2.1"
   },
   "config": {
     "allow-plugins": {
