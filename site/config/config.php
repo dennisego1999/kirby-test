@@ -26,7 +26,6 @@ return [
     // Allow panel installation
     'panel.install' => env('PANEL_INSTALL', true),
     
-  
     
     // Language Configuration
     // ---------------------
