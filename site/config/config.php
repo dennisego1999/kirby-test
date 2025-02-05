@@ -1,16 +1,15 @@
 <?php
 
-
 return [
     // Application Configuration
     // ------------------------
-    
+
     // Base URL of the site
     'url' => env('URL'),
-    
+
     // Current environment (production, development, staging)
     'environment' => env('ENVIRONMENT', 'production'),
-    
+
     // Caching Configuration
     // --------------------
     'cache' => [
@@ -19,20 +18,19 @@ return [
             'active' => env('CACHE', true),
         ],
     ],
-    
-    // Panel Configuration 
+
+    // Panel Configuration
     // ------------------
-    
+
     // Allow panel installation
     'panel.install' => env('PANEL_INSTALL', true),
-    
-    
+
     // Language Configuration
     // ---------------------
-    
+
     // Enable multi-language support
     'languages' => env('LANGUAGES', false),
-    
+
     // Enable automatic language detection based on browser settings
     'languages.detect' => env('LANGUAGES_DETECT', false),
 
@@ -41,13 +39,13 @@ return [
 
     // Debug Configuration
     // ------------------
-    
+
     // Enable debug mode in non-production/staging environments only
-    'debug' => !in_array(env('ENVIRONMENT'), ['production', 'staging']) ? env('DEBUG', false) : false,
-    
+    'debug' => ! in_array(env('ENVIRONMENT'), ['production', 'staging']) ? env('DEBUG', false) : false,
+
     // YAML Configuration
     // ------------------
-    
+
     // Use Symfony YAML handler (will be default in Kirby 5)
     'yaml.handler' => 'symfony',
 ];

@@ -35,9 +35,11 @@
     "kirby-cms-path": false
   },
   "scripts": {
-    "start": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 kirby/router.php"
-    ]
+    "lint": "pint --test",
+    "lint:fix": "pint"
+  },
+  "require-dev": {
+    "spatie/ray": "^1.41",
+    "laravel/pint": "^1.20"
   }
 }

@@ -1,0 +1,3 @@
+{
+  "exclude": ["content", "public", "storage", "plugins"]
+}
