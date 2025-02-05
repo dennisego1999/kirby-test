@@ -25,7 +25,7 @@ return [
     // Allow panel installation
     'panel.install' => env('PANEL_INSTALL', true),
     
-    // Security: Restrict panel iframe embedding to same origin only
+    // Security: Restrict panel iframe embedding to same origin only (for pagepreview plugin)
     'panel.frameAncestors' => ['self'],
     
     // Language Configuration
@@ -45,4 +45,10 @@ return [
     
     // Enable debug mode in non-production/staging environments only
     'debug' => !in_array(env('ENVIRONMENT'), ['production', 'staging']) ? env('DEBUG', false) : false,
+    
+    // YAML Configuration
+    // ------------------
+    
+    // Use Symfony YAML handler (will be default in Kirby 5)
+    'yaml.handler' => 'symfony',
 ];
