@@ -45,6 +45,11 @@ node_modules
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
 
+# Environment
+# ---------------
+
+.env
+
 # Cache Files
 # ---------------
 
