@@ -1,0 +1,21 @@
+title: Image
+
+accept:
+  type: image
+  maxsize: 5000000
+
+create:
+  width: 2000
+
+columns:
+  content:
+    type: fields
+    fields:
+      alt:
+        label: Alternative text
+        type: text
+        width: 1/2
+      caption:
+        label: Caption
+        type: text
+        width: 1/2

@@ -1,5 +1,55 @@
-title: Site
+title: Artomic
 
-sections:
+tabs:
   pages:
-    type: pages
+    icon: page
+    label: Pages
+    columns:
+      - width: 2/3
+        sections:
+          pages:
+            type: pages
+            search: true
+            limit: 10
+            layout: cards
+            status: listed
+            size: small
+      - width: 1/3
+        sections:
+          drafts:
+            type: pages
+            search: true
+            limit: 10
+            layout: list
+            status: draft
+            size: small
+
+          unlisted:
+            type: pages
+            search: true
+            limit: 10
+            layout: list
+            status: unlisted
+            size: small
+
+  navigation:
+    icon: menu
+    label: Navigation
+    sections:
+      navigation:
+        type: fields
+        fields:
+          navMain:
+            label: Main Navigation
+            extends: components/nav
+
+  siteInfo:
+    label: Site info
+    icon: edit
+    fields:
+      info:
+        label: Info
+        type: info
+        text: Add global info/fields here (delete this field)
+
+  seo: seo/site

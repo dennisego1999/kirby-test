@@ -1,0 +1,21 @@
+label: Files
+icon: file
+sections:
+  information:
+    type: fields
+    fields:
+      info:
+        label: File Management
+        type: info
+        text: Here, you can view all the files uploaded to this page, and you also have the options to delete, rename, or replace them.
+  fileManagementImages:
+    type: files
+    label: Images
+    query: page.images
+    layout: cardlets
+    search: true
+  fileManagementDocuments:
+    type: files
+    label: Documents
+    query: page.documents
+    search: true

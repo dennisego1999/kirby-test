@@ -1,0 +1,14 @@
+label: Navigation
+type: structure
+fields:
+  label:
+    label: Label
+    type: text
+    width: 1/2
+  link:
+    label: Link
+    type: link
+    options:
+      - page
+      - url
+    width: 1/2

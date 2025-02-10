@@ -1,0 +1,9 @@
+label: Visual
+type: files
+template: image
+empty: Add an image
+multiple: false
+help: Uploaded file cannot be larger than 5MB
+uploads:
+  template: image
+query: page.images

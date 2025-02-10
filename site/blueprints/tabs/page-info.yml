@@ -1,0 +1,6 @@
+label: Page info
+icon: edit
+fields:
+  showWhichUserModifiedPage:
+    type: recentlymodified
+    label: Recently Modified By
