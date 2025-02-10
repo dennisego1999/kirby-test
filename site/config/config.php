@@ -62,4 +62,33 @@ return [
 
     // Use Symfony YAML handler (will be default in Kirby 5)
     'yaml.handler' => 'symfony',
+
+    // Image Configuration
+    // ------------------
+
+    // Srcset presets for responsive images
+    'srcsets' => [
+        'default' => [ // JPEG/PNG preset with balanced quality and size
+            '400w' => ['width' => 400, 'crop' => true, 'quality' => 90],
+            '800w' => ['width' => 800, 'crop' => true, 'quality' => 90], 
+            '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 90],
+            '1800w' => ['width' => 1800, 'crop' => true, 'quality' => 90],
+        ],
+        'default-webp' => [ // WebP preset with better compression
+            '400w' => ['width' => 400, 'crop' => true, 'quality' => 85, 'format' => 'webp'],
+            '800w' => ['width' => 800, 'crop' => true, 'quality' => 85, 'format' => 'webp'],
+            '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 85, 'format' => 'webp'],
+            '1800w' => ['width' => 1800, 'crop' => true, 'quality' => 85, 'format' => 'webp'],
+        ],
+        'default-avif' => [ // AVIF preset with highest compression
+            '400w' => ['width' => 400, 'crop' => true, 'quality' => 75, 'format' => 'avif'],
+            '800w' => ['width' => 800, 'crop' => true, 'quality' => 75, 'format' => 'avif'],
+            '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 75, 'format' => 'avif'],
+            '1800w' => ['width' => 1800, 'crop' => true, 'quality' => 75, 'format' => 'avif'],
+        ],
+    ],
+
+    // Image processing configuration
+    'driver' => 'im', // Use ImageMagick as the image processing driver better for webp and avif
+    'threads' => 2,   // Number of parallel processing threads
 ];
