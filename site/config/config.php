@@ -25,6 +25,20 @@ return [
     // Allow panel installation
     'panel.install' => env('PANEL_INSTALL', true),
 
+    // Loads custom CSS and JS files for the panel interface
+    'ready' => fn () => [
+        'panel' => [
+            // Load environment-specific and base panel styles
+            'css' => vite([
+                'site/views/00_panel/panel.scss', // Base panel styles
+                'site/views/00_panel/panel-'.option('environment').'.scss', // Environment-specific styles
+            ]),
+            // Load panel JavaScript
+            'js' => vite(['site/views/00_panel/panel.ts']), // Panel functionality
+        ],
+    ],
+
+
     // Language Configuration
     // ---------------------
 

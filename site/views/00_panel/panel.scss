@@ -1,0 +1,24 @@
+.k-panel-main {
+	padding-top: calc(var(--spacing-3) + 20px);
+	position: relative;
+
+	&:before {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 20px;
+		color: white;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+}
+
+.k-section-name-fileManagementImages .k-label-invalid,
+.k-section-name-fileManagementDocuments .k-label-invalid {
+	display: none !important;
+}

@@ -9,7 +9,15 @@ const artomicViewsDir = 'site/views';
 const config = {
 	plugins: [
 		laravel({
-			input: [`${artomicViewsDir}/06_layouts/app/app.scss`, `${artomicViewsDir}/06_layouts/app/app.ts`],
+			input: [
+				`${artomicViewsDir}/06_layouts/app/app.scss`,
+				`${artomicViewsDir}/06_layouts/app/app.ts`,
+				`${artomicViewsDir}/00_panel/panel-development.scss`,
+				`${artomicViewsDir}/00_panel/panel-staging.scss`,
+				`${artomicViewsDir}/00_panel/panel-production.scss`,
+				`${artomicViewsDir}/00_panel/panel.scss`,
+				`${artomicViewsDir}/00_panel/panel.ts`,
+			],
 			refresh: [`site/**/**/*`],
 			detectTls: 'plainkit.test', // needed if name of project is different from the domain
 		}),
