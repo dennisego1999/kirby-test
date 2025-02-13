@@ -6,6 +6,14 @@ import checker from 'vite-plugin-checker';
 
 const artomicViewsDir = 'site/views';
 
+const DDEVServer = {
+	host: '0.0.0.0',
+	hmr: {
+		host: process.env.DDEV_HOSTNAME,
+		protocol: 'wss',
+	},
+};
+
 const config = {
 	plugins: [
 		laravel({
@@ -19,7 +27,6 @@ const config = {
 				`${artomicViewsDir}/00_panel/panel.ts`,
 			],
 			refresh: [`site/**/**/*`],
-			detectTls: 'plainkit.test', // needed if name of project is different from the domain
 		}),
 		checker({
 			overlay: true,
@@ -33,5 +40,11 @@ const config = {
 			'@node_modules': path.resolve(__dirname, 'node_modules'),
 		},
 	},
+	server: {},
 };
+
+if (process.env.DDEV_HOSTNAME) {
+	config.server = DDEVServer;
+}
+
 export default defineConfig(config);
