@@ -19,7 +19,6 @@ const config = {
 				`${artomicViewsDir}/00_panel/panel.ts`,
 			],
 			refresh: [`site/**/**/*`],
-			detectTls: 'plainkit.test', // needed if name of project is different from the domain
 		}),
 		checker({
 			overlay: true,
@@ -33,5 +32,19 @@ const config = {
 			'@node_modules': path.resolve(__dirname, 'node_modules'),
 		},
 	},
+	server: {},
 };
+
+if (process.env.DDEV_PRIMARY_URL) {
+	config.server = {
+		host: '0.0.0.0',
+		port: 5173,
+		strictPort: true,
+		origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, "")}:5173`,
+		cors: {
+			origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
+		},
+	};
+}
+
 export default defineConfig(config);
