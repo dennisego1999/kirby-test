@@ -6,14 +6,6 @@ import checker from 'vite-plugin-checker';
 
 const artomicViewsDir = 'site/views';
 
-const DDEVServer = {
-	host: '0.0.0.0',
-	hmr: {
-		host: process.env.DDEV_HOSTNAME,
-		protocol: 'wss',
-	},
-};
-
 const config = {
 	plugins: [
 		laravel({
@@ -43,8 +35,16 @@ const config = {
 	server: {},
 };
 
-if (process.env.DDEV_HOSTNAME) {
-	config.server = DDEVServer;
+if (process.env.DDEV_PRIMARY_URL) {
+	config.server = {
+		host: '0.0.0.0',
+		port: 5173,
+		strictPort: true,
+		origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, "")}:5173`,
+		cors: {
+			origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
+		},
+	};
 }
 
 export default defineConfig(config);
