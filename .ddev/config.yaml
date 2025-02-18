@@ -1,21 +1,28 @@
 name: kirby
 type: php
 docroot: public
-php_version: "8.3"
+php_version: '8.3'
 webserver_type: apache-fpm
+router_http_port: '80'
+router_https_port: '443'
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
-use_dns_when_possible: true
-composer_version: "2"
-web_environment: []
-corepack_enable: false
+hooks:
+  post-start:
+    - exec: composer i
+    - exec: yarn && yarn dev
+    - exec-host: ddev launch
+  pre-start:
+    - exec-host: ddev auth ssh
+upload_dirs:
+  - build
 omit_containers: [db]
-web_extra_exposed_ports:
-  - name: vite
-    container_port: 5173
-    http_port: 5172
-    https_port: 5173
+use_dns_when_possible: true
+composer_version: '2'
+web_environment:
+  - APP_URL=https://${DDEV_HOSTNAME}
+nodejs_version: '20'
 
 # Key features of DDEV's config.yaml:
 
