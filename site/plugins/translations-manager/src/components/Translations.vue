@@ -1,9 +1,10 @@
 <script setup>
+	// Define props
 	defineProps({
 		translations: Array
 	});
 
-	// Convert array to CSV with locale columns
+	// Define functions
 	function arrayToCsv(data) {
 		// Structure the data by type and key first, then locales as columns
 		const structuredData = {};
@@ -32,8 +33,8 @@
 		// Add rows for each translation key
 		Object.values(structuredData).forEach((item) => {
 			const row = [
-				item.type,  // TYPE
-				item.key,   // KEY
+				item.type,
+				item.key,
 				...locales.map((locale) => item.values[locale] || ''),
 			];
 			csvRows.push(row.join(','));
@@ -43,7 +44,6 @@
 		return csvRows.join('\r\n');
 	}
 
-	// Function to download the CSV as a blob
 	function downloadBlob(content, contentType) {
 		const blob = new Blob([content], { type: contentType });
 		const url = URL.createObjectURL(blob);
