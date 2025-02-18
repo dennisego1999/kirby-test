@@ -4,8 +4,39 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad0e10db0dd95942eda94edb163226f4",
+    "content-hash": "ac96c7b664cd6e2b6a02056087cd15d6",
     "packages": [
+        {
+            "name": "artcoresociety/translations-manager",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./site/plugins/translations-manager",
+                "reference": "be292f4259f62e36fc54800b0f58ae1969aaf6e9"
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Artcoresociety\\TranslationsManager\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artcore Society",
+                    "email": "info@artcoresociety.com"
+                }
+            ],
+            "description": "Translation manager plugin",
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "beebmx/kirby-env",
             "version": "4.2.1",
@@ -2382,7 +2413,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.4"
+        "php": "^8.3"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"

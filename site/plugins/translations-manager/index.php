@@ -1,15 +1,15 @@
 <?php
 
-Kirby::plugin('artcoresociety/translation-manager', [
+Kirby::plugin('artcoresociety/translations-manager', [
     'areas' => [
-        'translation-manager' => function ($kirby) {
+        'translations-manager' => function ($kirby) {
             return [
-                'label' => 'Translation Manager',
+                'label' => 'Translations Manager',
                 'icon' => 'bug',
                 'menu' => true,
-                'link' => 'translation-manager',
+                'link' => 'translations-manager',
                 'views' => [
-                    require __DIR__.'/views/translation-manager.php',
+                    require __DIR__.'/views/translations-manager.php',
                 ],
             ];
         },

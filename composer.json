@@ -20,11 +20,18 @@
     "forum": "https://forum.getkirby.com",
     "source": "https://github.com/getkirby/plainkit"
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./site/plugins/translations-manager"
+    }
+  ],
   "require": {
     "php": "^8.3",
     "getkirby/cms": "^4.0",
     "beebmx/kirby-env": "^4.2",
-    "lukaskleinschmidt/kirby-laravel-vite": "^2.1"
+    "lukaskleinschmidt/kirby-laravel-vite": "^2.1",
+    "artcoresociety/translations-manager": "^1.0"
   },
   "config": {
     "allow-plugins": {

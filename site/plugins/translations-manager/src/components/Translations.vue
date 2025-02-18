@@ -3,52 +3,57 @@
 		translations: Array
 	});
 
-	// Define functions
-	function importTranslations() {
-		console.log('import translations');
-	}
+	// Convert array to CSV with locale columns
 	function arrayToCsv(data) {
-		let copy = [...data];
+		// Structure the data by type and key first, then locales as columns
+		const structuredData = {};
 
-		// Get all possible keys from all objects
-		const allKeys = copy.reduce((keys, row) => {
-			Object.keys(row).forEach((key) => keys.add(key));
-			return keys;
-		}, new Set());
+		// Group translations by type and key
+		data.forEach((row) => {
+			const { type, key, value, locale } = row;
+			if (!structuredData[key]) {
+				structuredData[key] = { type, key, values: {} };
+			}
+			structuredData[key].values[locale] = value;
+		});
 
-		// Create header row using all possible keys
-		const headerRow = Object.fromEntries([...allKeys].map((key) => [key, key]));
-		copy.unshift(headerRow);
+		// Collect all locales (columns)
+		const locales = Array.from(
+			new Set(data.map((row) => row.locale))
+		).sort();
 
-		return copy
-			.map((row) => {
-				// Ensure all keys exist in each row, fill missing with empty string
-				return [...allKeys].map((key) => row[key] || '');
-			})
-			.map((row) =>
-				row
-					.map(String)
-					.map((v) => v.replaceAll('"', '""'))
-					.map((v) => `"${v}"`)
-					.join(',')
-			)
-			.join('\r\n');
+		// Prepare the CSV rows
+		const csvRows = [];
+
+		// Add the header row (Type, Key, and all locales)
+		const headerRow = ['TYPE', 'KEY', ...locales.map(locale => locale.toUpperCase())];
+		csvRows.push(headerRow.join(','));
+
+		// Add rows for each translation key
+		Object.values(structuredData).forEach((item) => {
+			const row = [
+				item.type,  // TYPE
+				item.key,   // KEY
+				...locales.map((locale) => item.values[locale] || ''),
+			];
+			csvRows.push(row.join(','));
+		});
+
+		// Return the CSV string
+		return csvRows.join('\r\n');
 	}
 
+	// Function to download the CSV as a blob
 	function downloadBlob(content, contentType) {
-		// Create a blob
-		var blob = new Blob([content], { type: contentType });
-		var url = URL.createObjectURL(blob);
+		const blob = new Blob([content], { type: contentType });
+		const url = URL.createObjectURL(blob);
 
-		// Create a link to download it
-		var pom = document.createElement('a');
+		const pom = document.createElement('a');
 		pom.href = url;
-		pom.setAttribute('download', `export_translations_${Date.now()}`);
+		pom.setAttribute('download', `export_translations_${Date.now()}.csv`);
 		pom.click();
 	}
 </script>
-
-
 
 <template>
 	<k-inside>

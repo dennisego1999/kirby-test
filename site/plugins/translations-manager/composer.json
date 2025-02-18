@@ -1,0 +1,27 @@
+{
+	"name": "artcoresociety/translations-manager",
+	"description": "Translation manager plugin",
+	"license": "MIT",
+	"type": "kirby-plugin",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Artcore Society",
+			"email": "info@artcoresociety.com"
+		}
+	],
+	"require": {
+		"getkirby/composer-installer": "^1.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Artcoresociety\\TranslationsManager\\": "src/"
+		}
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"allow-plugins": {
+			"getkirby/composer-installer": true
+		}
+	}
+}
