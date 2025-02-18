@@ -6,7 +6,12 @@ return [
         return [
             'component' => 'k-translations-view',
             'props' => [
-                'translations' => ['test'],
+                'translations' => [
+                    [
+                        'key' => 'test.key',
+                        'value' => 'Sleutel',
+                    ]
+                ],
             ],
         ];
     },
