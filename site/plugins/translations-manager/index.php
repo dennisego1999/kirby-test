@@ -14,4 +14,5 @@ Kirby::plugin('artcoresociety/translations-manager', [
             ];
         },
     ],
+    'routes' => require __DIR__.'/src/routes.php',
 ]);

@@ -9,7 +9,7 @@ return [
     ],
     'name' => 'English (United Kingdom)',
     'translations' => [
-        'label.test' => 'Test'
+        'label.test' => 'Test voor EnglishHHHHH'
     ],
     'url' => NULL
 ];

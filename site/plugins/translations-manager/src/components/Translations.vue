@@ -53,6 +53,20 @@
 		pom.setAttribute('download', `export_translations_${Date.now()}.csv`);
 		pom.click();
 	}
+
+	function onUploadClick(event) {
+		let options = {
+			"accept": "*",
+			"attributes": {},
+			"files": [],
+			"max": null,
+			"multiple": false,
+			"replacing": null,
+			"url": '/translations-manager/import-translations'
+		}
+
+		window.panel.upload.pick(options);
+	}
 </script>
 
 <template>
@@ -68,15 +82,15 @@
 					variant="filled"
 					icon="download"
 				>
-					Export translations
+					Export
 				</k-button>
 
 				<k-button
-					@click="importTranslations"
+					icon="upload"
 					variant="filled"
-					icon="file"
+					@click="onUploadClick"
 				>
-					Import translations
+					Import
 				</k-button>
 			</div>
 		</k-view>
