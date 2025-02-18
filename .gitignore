@@ -41,6 +41,8 @@ node_modules
 
 /site/plugins/*
 
+!/site/plugins/translations-manager
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
